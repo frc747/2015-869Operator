@@ -1,14 +1,14 @@
 package com.frc869.robot.operator2015;
 
-import com.frc869.robot.operator2015.util.SystemUiHider;
+import com.frc869.robot.operator2015.server.Server;
 
-import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 /**
@@ -18,21 +18,48 @@ import android.widget.Button;
  * @see SystemUiHider
  */
 public class Operator extends Activity {
+	
+	Server server;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
+		this.server = new Server(5809);
+
+		if (Build.VERSION.SDK_INT < 16) {
+			getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+					WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+
+		View decorView = getWindow().getDecorView();
+		// Hide the status bar.
+		int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_IMMERSIVE;
+		decorView.setSystemUiVisibility(uiOptions);
+		// Remember that you should never show the action bar if the
+		// status bar is hidden, so hide that too if necessary.
+		ActionBar actionBar = getActionBar();
+		actionBar.hide();
+
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_operator);
 
 		final View operatorView = findViewById(R.id.Operator_control);
 		final View zone1_Next_v = findViewById(R.id.Zone1_Next);
+		final View zone1_Prev_v = findViewById(R.id.Zone1_Prev);
+		final View zone2_Next_v = findViewById(R.id.Zone2_Next);
+		final View zone2_Prev_v = findViewById(R.id.Zone2_Prev);
+		final View zone3_Next_v = findViewById(R.id.Zone3_Next);
+		final View zone3_Prev_v = findViewById(R.id.Zone3_Prev);
 		Button zone1_Next = (Button) zone1_Next_v;
-		
-		zone1_Next.setText("Next");
-		
+		Button zone1_Prev = (Button) zone1_Prev_v;
+		Button zone2_Next = (Button) zone2_Next_v;
+		Button zone2_Prev = (Button) zone2_Prev_v;
+		Button zone3_Next = (Button) zone3_Next_v;
+		Button zone3_Prev = (Button) zone3_Prev_v;
+
 		zone1_Next.setOnTouchListener(new View.OnTouchListener() {
-			
+
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				// TODO Auto-generated method stub
@@ -40,6 +67,19 @@ public class Operator extends Activity {
 			}
 		});
 
+	}
+	
+	public void onResume(){
+		super.onResume();
+		
+		View decorView = getWindow().getDecorView();
+		// Hide the status bar.
+		int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_IMMERSIVE;
+		decorView.setSystemUiVisibility(uiOptions);
+		// Remember that you should never show the action bar if the
+		// status bar is hidden, so hide that too if necessary.
+		ActionBar actionBar = getActionBar();
+		actionBar.hide();
 	}
 
 }

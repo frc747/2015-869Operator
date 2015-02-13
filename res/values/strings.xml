@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">869 Operator</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Zone1_Next">Next</string>
+    <string name="Zone1_Prev">Prev</string>
+    <string name="Zone2_Next">Next</string>
+    <string name="Zone2_Prev">Prev</string>
+    <string name="Zone3_Next">Next</string>
+    <string name="Zone3_Prev">Prev</string>
 
 </resources>

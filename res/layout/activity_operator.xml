@@ -1,95 +1,101 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc" tools:context=".Operator">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".Operator" >
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/Operator_control"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/Operator_control">
+        android:orientation="horizontal" >
 
         <FrameLayout
+            android:id="@+id/Zone1"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:id="@+id/Zone1">
+            android:layout_weight="1" >
 
             <Button
+                android:id="@+id/Zone1_Next"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/Zone1_Next" />
+                android:text="@string/Zone1_Next"
+                android:textSize="@dimen/text_size" />
 
             <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
                 android:id="@+id/Zone1_Prev"
-                android:layout_gravity="center_horizontal|bottom" />
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/Zone1_Prev"
+                android:textSize="@dimen/text_size" />
 
             <Space
+                android:id="@+id/Zone1_Touch"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_gravity="center"
-                android:id="@+id/Zone1_Touch" />
+                android:layout_gravity="center" />
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/Zone2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:id="@+id/Zone2">
+            android:layout_weight="1" >
 
             <Button
+                android:id="@+id/Zone2_Next"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/Zone2_Next" />
+                android:text="@string/Zone2_Next"
+                android:textSize="@dimen/text_size" />
 
             <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
                 android:id="@+id/Zone2_Prev"
-                android:layout_gravity="center_horizontal|bottom" />
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/Zone2_Prev"
+                android:textSize="@dimen/text_size" />
 
             <Space
+                android:id="@+id/Zone2_Touch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/Zone2_Touch" />
-
+                android:layout_gravity="center" />
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/Zone3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/Zone3">
+            android:layout_weight="1" >
 
             <Button
+                android:id="@+id/Zone3_Next"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Button"
+                android:text="@string/Zone3_Next"
+                android:textSize="@dimen/text_size" />
+
+            <Button
                 android:id="@+id/Zone3_Prev"
-                android:layout_gravity="bottom" />
-
-            <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/Zone3_Next" />
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/Zone3_Prev"
+                android:textSize="@dimen/text_size" />
 
             <Space
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:focusableInTouchMode="true"
-                android:id="@+id/Zone3_Touch" />
+                android:id="@+id/Space01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
         </FrameLayout>
-
     </LinearLayout>
+
 </FrameLayout>
