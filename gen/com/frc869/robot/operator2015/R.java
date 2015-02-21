@@ -30,7 +30,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class id {
         public static final int Activity_main=0x7f080000;
         public static final int Operator_control=0x7f080001;
-        public static final int Space01=0x7f08000d;
         public static final int Zone1=0x7f080002;
         public static final int Zone1_Next=0x7f080003;
         public static final int Zone1_Prev=0x7f080004;
@@ -42,6 +41,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Zone3=0x7f08000a;
         public static final int Zone3_Next=0x7f08000b;
         public static final int Zone3_Prev=0x7f08000c;
+        public static final int Zone3_Touch=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_operator=0x7f030000;

@@ -92,7 +92,7 @@
                 android:textSize="@dimen/text_size" />
 
             <Space
-                android:id="@+id/Space01"
+                android:id="@+id/Zone3_Touch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
