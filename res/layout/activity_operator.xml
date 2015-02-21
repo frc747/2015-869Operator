@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context=".Operator" >
+    tools:context=".Operator"
+    android:id="@+id/Activity_main" >
 
     <LinearLayout
         android:id="@+id/Operator_control"

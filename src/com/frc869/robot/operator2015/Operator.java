@@ -33,7 +33,12 @@ public class Operator extends Activity {
 
 		View decorView = getWindow().getDecorView();
 		// Hide the status bar.
-		int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_IMMERSIVE;
+		int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+	            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+	            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+	            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+	            | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+	            | View.SYSTEM_UI_FLAG_IMMERSIVE;
 		decorView.setSystemUiVisibility(uiOptions);
 		// Remember that you should never show the action bar if the
 		// status bar is hidden, so hide that too if necessary.
@@ -62,11 +67,53 @@ public class Operator extends Activity {
 
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				// TODO Auto-generated method stub
+				server.sendMessage("TUGGERLEFT NEXT");
 				return false;
 			}
 		});
+		
+		zone1_Prev.setOnTouchListener(new View.OnTouchListener() {
 
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				server.sendMessage("TUGGERLEFT PREV");
+				return false;
+			}
+		});
+	zone2_Next.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				server.sendMessage("TUGGERRIGHT NEXT");
+				return false;
+			}
+		});
+	 zone2_Prev.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				server.sendMessage("TUGGERRIGHT PREV");
+				return false;
+			}
+		});
+	
+	zone3_Next.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				server.sendMessage("LIFT UP");
+				return false;
+			}
+		});
+	
+	zone3_Prev.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				server.sendMessage("LIFT DOWN");
+				return false;
+			}
+		});
 	}
 	
 	public void onResume(){
@@ -74,7 +121,12 @@ public class Operator extends Activity {
 		
 		View decorView = getWindow().getDecorView();
 		// Hide the status bar.
-		int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_IMMERSIVE;
+		int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+	            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+	            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+	            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+	            | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+	            | View.SYSTEM_UI_FLAG_IMMERSIVE;
 		decorView.setSystemUiVisibility(uiOptions);
 		// Remember that you should never show the action bar if the
 		// status bar is hidden, so hide that too if necessary.

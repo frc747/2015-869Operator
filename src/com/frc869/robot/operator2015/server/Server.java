@@ -26,6 +26,7 @@ public class Server implements Runnable {
 			try {
 				this.server = new ServerSocket(port);
 				Socket socket;
+				System.out.println("waiting");
 				while((socket = this.server.accept()) != null){
 					this.client = new Client(socket);
 					this.client.connected();
@@ -33,12 +34,14 @@ public class Server implements Runnable {
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				//e.printStackTrace();
+				System.err.println(e.getMessage());
 			}
 		}
 	}
 	
 	public void sendMessage(String str){
+		System.out.println(str);
 		if(this.client != null){
 			this.client.sendMessage(str);
 		}
